@@ -440,7 +440,7 @@ function speakWeather() {
     let txtMessage = '';
     if(lang == "ru-RU") {
         txtMessage = `Прогноз на сегодня: ${currentTemp} градусов выше нуля. Ощущается как ${feelsLike}.
-        скорость ветра $ {wind} метров в секунду. Влажность составляет ${humidity} процентов...
+        скорость ветра ${wind} метров в секунду. Влажность составляет ${humidity} процентов...
         Что касается ${nextDayDate} ${currentMonth}, температура составляет ${nextDayTemp} градусов.
         На ${secondDayDate}  ${currentMonth} температура составляет ${secondDayTemp} градусов.
         А для ${thirdDayDate}  ${currentMonth} температура составляет ${thirdDayTemp} градусов.`
