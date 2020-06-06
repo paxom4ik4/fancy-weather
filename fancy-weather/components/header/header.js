@@ -208,7 +208,7 @@ function enText(){
     let humidityDiv = document.querySelector(".humidity");
     let lat = document.querySelector(".lat-val");
     let lon = document.querySelector(".lon-val");
-    let mapTxt = document.querySelector(".map-txt");
+    let mapTxt = document.querySelector(".forecast-txt");
     
     function render() {
         getTranslationRus(currentMonth)
