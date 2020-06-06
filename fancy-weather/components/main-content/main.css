@@ -1,0 +1,475 @@
+.main-info {
+    margin-left: 220px;
+    margin-top: 50px;
+    padding: 5px 40px;
+    width: 500px;
+    height: 180px;
+    background-color: black;
+    opacity: 0.8;
+    color: #FFFFFF;
+    border-radius: 10px;
+    font-size: 48px;
+    transition: .5s;
+}
+.main-info:hover {
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    transition: .2s;
+}
+.rain-image {
+    position: absolute;
+    top: -100px;
+    right: 25px;
+    width: 256px;
+    height: 256px;
+    background-image: url(../../assets/icons/rain.png);
+}
+.cloud-image {
+    position: absolute;
+    top: -100px;
+    right: 25px;
+    width: 256px;
+    height: 256px;
+    background-image: url(../../assets/icons/cloudy.png);
+}
+.sunny-image {
+    position: absolute;
+    top: -100px;
+    right: 25px;
+    width: 256px;
+    height: 256px;
+    background-image: url(../../assets/icons/sun.png); 
+}
+.small-rain-image {
+    position: absolute;
+    top: 40px;
+    right: 25px;
+    width: 64px;
+    height: 64px;
+    background-size: 64px 64px;
+    background-position: center;
+    background-image: url(../../assets/icons/rain.png);
+}
+.small-cloud-image {
+    position: absolute;
+    top: 40px;
+    right: 25px;
+    width: 64px;
+    height: 64px;
+    background-size: 64px 64px;
+    background-position: center;
+    background-image: url(../../assets/icons/cloudy.png);
+}
+.small-sunny-image {
+    position: absolute;
+    top: 40px;
+    right: 25px;
+    width: 64px;
+    height: 64px;
+    background-size: 64px 64px;
+    background-position: center;
+    background-image: url(../../assets/icons/sun.png); 
+}
+.forecast {
+    margin-left: 20px;
+    margin-top: 50px;
+    position: relative;
+    padding: 5px;
+    width: 700px;
+    height: 300px;
+    background-color: black;
+    opacity: 0.8;
+    color: #FFFFFF;
+    border-radius: 10px;
+    transition: .5s;
+}
+
+.forecast:hover {
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    transition: .2s;
+}
+.current-temp {
+    font-size: 158px;
+    position: absolute;
+    left: 60px;
+    top: 15px;
+}
+.day-temp {
+    font-size: 40px;
+    position: absolute;
+    top: 50%;
+    left: 10px;
+}
+.degree {
+    position: absolute;
+    left: 260px;
+    top: 10px;
+    font-size: 80px;
+}
+.degree-small {
+    position: absolute;
+    top: 50%;
+    left: 55px;
+    font-size: 40px;
+}
+
+.overcast {
+    font-size: 38px;
+    position: absolute;
+    right: 100px;
+    bottom: 0px;
+}
+
+.three-days {
+    margin-left: 20px;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    color: #FFFFFF;
+    font-size: 28px;
+}
+.first:hover {
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    transition: .2s;
+}
+.second:hover {
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    transition: .2s;
+}
+.third:hover {
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    transition: .2s;
+}
+.first {
+    position: relative;
+    padding: 5px;
+    margin-left: 4px;
+    border-radius: 10px;
+    width: 230px;
+    height: 180px;
+    background-color: black;
+    opacity: 0.8;
+    transition: .5s;
+}
+
+.second {
+    position: relative;
+    padding: 5px;
+    margin-left: 4px;
+    border-radius: 10px;
+    width: 230px;
+    height: 180px;
+    background-color: black;
+    opacity: 0.8;
+    transition: .5s;
+}
+.third {
+    position: relative;
+    padding: 5px;
+    margin-left: 4px;
+    border-radius: 10px;
+    width: 230px;
+    height: 180px;
+    background-color: black;
+    opacity: 0.8;
+    transition: .5s;
+}
+.microphone {
+    width: 32px;
+    height: 32px;
+    background-image: url(../../assets/icons/microphone.png);
+    background-position: center;
+    background-size: 32px 32px;
+    background-repeat: no-repeat;
+    margin-top: 3px;
+    margin-left: 10px;
+}
+.microphone:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+.microphone-active {
+    width: 32px;
+    height: 32px;
+    background-image: url(../../assets/icons/microphone-active.png);
+    background-position: center;
+    background-size: 32px 32px;
+    background-repeat: no-repeat;
+    margin-top: 3px;
+    margin-left: 10px;
+}
+.microphone-active:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.forecast-txt {
+    font-size: 20px;
+    color: white;
+    margin-left: 50px;
+    margin-top: 8px;
+}
+
+@media (min-width: 1440px) and (max-width: 1880px){
+    .main-info {
+        width: 400px;
+        margin-left: 20px;
+        margin-top: 150px;
+    }
+    .forecast{
+        width: 400px; 
+    }
+    .forecast span{
+        font-size: 30px; 
+    }
+    .rain-image {
+        position: absolute;
+        top: -100px;
+        right: 25px;
+        width: 128px;
+        height: 128px;
+        background-image: 128px 128px;
+        background-image: url(../../assets/icons/rain.png);
+    }
+    .cloud-image {
+        position: absolute;
+        top: -100px;
+        right: 25px;
+        width: 128px;
+        height: 128px;
+        background-image: 128px 128px;
+        background-image: url(../../assets/icons/cloudy.png);
+    }
+    .sunny-image {
+        position: absolute;
+        top: -100px;
+        right: 25px;
+        width: 128px;
+        height: 128px;
+        background-image: url(../../assets/icons/sun.png); 
+        background-image: 128px 128px;
+    }
+    .second {
+        margin-left: 200px;
+    }
+    .third {
+        margin-left: 200px;
+    }
+}
+
+@media (min-width: 1000px) and (max-width: 1440px){
+    .main-info {
+        width: 400px;
+        margin-left: 20px;
+        margin-top: 150px;
+    }
+    .forecast{
+        width: 400px; 
+    }
+    .forecast span{
+        font-size: 30px; 
+    }
+    .rain-image {
+        position: absolute;
+        top: -100px;
+        right: 25px;
+        width: 128px;
+        height: 128px;
+        background-image: 128px 128px;
+        background-image: url(../../assets/icons/rain.png);
+    }
+    .cloud-image {
+        position: absolute;
+        top: -100px;
+        right: 25px;
+        width: 128px;
+        height: 128px;
+        background-image: 128px 128px;
+        background-image: url(../../assets/icons/cloudy.png);
+    }
+    .sunny-image {
+        position: absolute;
+        top: -100px;
+        right: 25px;
+        width: 128px;
+        height: 128px;
+        background-image: url(../../assets/icons/sun.png); 
+        background-image: 128px 128px;
+    }
+    .second {
+        margin-left: 200px;
+    }
+    .third {
+        margin-left: 160px;
+    }
+}
+@media (min-width: 768px) and (max-width: 1001px){
+    *{
+        margin: 0 auto;
+    }
+    .main-info {
+        width: 90%;
+        margin-left: 20px;
+        margin-top: 150px;
+    }
+    .forecast{
+        width: 90%; 
+    }
+    .forecast span{
+        font-size: 30px; 
+    }
+    .rain-image {
+        position: absolute;
+        top: -100px;
+        right: 25px;
+        width: 128px;
+        height: 128px;
+        background-image: 128px 128px !important;
+        background-image: url(../../assets/icons/rain.png);
+    }
+    .cloud-image {
+        position: absolute;
+        top: -100px;
+        right: 25px;
+        width: 128px;
+        height: 128px;
+        background-image: 128px 128px !important;
+        background-image: url(../../assets/icons/cloudy.png);
+    }
+    .sunny-image {
+        position: absolute;
+        top: -100px;
+        right: 25px;
+        width: 128px;
+        height: 128px;
+        background-image: url(../../assets/icons/sun.png); 
+        background-image: 128px 128px !important;
+    }
+    .current-temp{
+        font-size: 150px !important;
+    }
+    .first{
+        width: 30%;
+    }
+    .second {
+        width: 30%;
+    }
+    .third {
+        width: 30%       
+    }
+}
+@media (min-width: 425px) and (max-width: 768px){
+    *{
+        margin: 0 auto;
+    }
+    .main-info {
+        width: 90%;
+        margin-left: 20px;
+        margin-top: 150px;
+    }
+    .forecast{
+        width: 90%; 
+    }
+    .forecast span{
+        font-size: 30px; 
+    }
+    .rain-image {
+        position: absolute;
+        top: -100px;
+        right: 25px;
+        width: 128px;
+        height: 128px;
+        background-image: 128px 128px !important;
+        background-image: url(../../assets/icons/rain.png);
+    }
+    .cloud-image {
+        position: absolute;
+        top: -100px;
+        right: 25px;
+        width: 128px;
+        height: 128px;
+        background-image: 128px 128px !important;
+        background-image: url(../../assets/icons/cloudy.png);
+    }
+    .sunny-image {
+        position: absolute;
+        top: -100px;
+        right: 25px;
+        width: 128px;
+        height: 128px;
+        background-image: url(../../assets/icons/sun.png); 
+        background-image: 128px 128px !important;
+    }
+    .current-temp{
+        font-size: 150px !important;
+    }
+    .first{
+        width: 30%;
+    }
+    .second {
+        width: 30%;
+    }
+    .third {
+        width: 30%       
+    }
+}
+@media (min-width: 320px) and (max-width: 425px){
+    *{
+        margin: 0 auto;
+    }
+    .main-info {
+        width: 90%;
+        margin-left: 20px;
+        margin-top: 100px;
+        height: 250px;
+    }
+    .forecast{
+        width: 90%; 
+    }
+    .forecast span{
+        font-size: 30px; 
+    }
+    .rain-image {
+        position: absolute;
+        top: -100px;
+        right: 25px;
+        width: 128px;
+        height: 128px;
+        background-image: 128px 128px !important;
+        background-image: url(../../assets/icons/rain.png);
+    }
+    .cloud-image {
+        position: absolute;
+        top: -100px;
+        right: 25px;
+        width: 128px;
+        height: 128px;
+        background-image: 128px 128px !important;
+        background-image: url(../../assets/icons/cloudy.png);
+    }
+    .sunny-image {
+        position: absolute;
+        top: -100px;
+        right: 25px;
+        width: 128px;
+        height: 128px;
+        background-image: url(../../assets/icons/sun.png); 
+        background-image: 128px 128px !important;
+    }
+    .current-temp{
+        font-size: 150px !important;
+    }
+    .first{
+        width: 30%;
+    }
+    .second {
+        width: 30%;
+    }
+    .third {
+        width: 30%       
+    }
+}

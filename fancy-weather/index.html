@@ -1,15 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="windy">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
     <title>Fancy Weather</title>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=345b1f97-048e-4995-ab7b-0d7afcbce6f2&lang=ru_RU" type="text/javascript">
+    </script>
 </head>
 <body>
-    <h1>fancy weather</h1>
-    <p>По причине болезни, не мог сделать задание до дедлайна, соответственно сдаю позже. <br>
-       Проверьте моё приложение на выходных, пожалуйста. К этому времени загружу. <br>
-       Надеюсь на понимание, и, извиняюсь за предоставленные неудобства.
-    </p>
-</body>
+        <header class="header"></header>
+
+        <div class="main-content"></div>
+
+        <div class="map-container"></div>
+
+        <script src="constants/root.js"></script>
+        
+
+        <script src="components/map/map.js"></script>
+        <link rel="stylesheet" href="components/map/map.css">
+
+        <link rel="stylesheet" href="components/header/header.css">
+        <script src="components/header/header.js"></script>
+
+        <script src="components/main-content/main.js"></script>
+        <link rel="stylesheet" href="components/main-content/main.css">
+        
+        <script src="js/main.js"></script>
 </html>

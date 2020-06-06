@@ -1,0 +1,52 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url(../../assets/fonts/Roboto-Thin.ttf);
+}
+* {
+    font-family: 'Roboto';
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    width: 100%;
+    height: 100%;
+}
+body {
+    position: relative;
+}
+.rain {
+    background-image: url(../assets/background-images/rain.jpg);
+    background-position: center;
+    background-size: 100% 100%;
+}
+.sunny {
+    background-image: url(../assets/background-images/sunny.jpg);
+    background-position: center;
+    background-size: 100% 100%;
+}
+.windy {
+    background-image: url(../assets/background-images/windy.jpg);
+    background-position: center;
+    background-size: 100% 100%;
+}
+
+@media (min-width: 1440px) and (max-width: 1880px){
+    .rain {
+        background-image: url(../assets/background-images/rain.jpg);
+        background-position: center;
+        background-size: cover;
+    }
+    .sunny {
+        background-image: url(../assets/background-images/sunny.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100% 100% cover;
+
+    }
+    .windy {
+        background-image: url(../assets/background-images/windy.jpg);
+        background-position: center;
+        background-size: cover;
+    }
+}

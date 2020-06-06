@@ -1,0 +1,212 @@
+.header {
+    box-sizing: border-box;
+    margin-top: 5px;
+    padding: 20px 30px 20px 30px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 4% 7% 5% 30% 52% 2%;
+    background-color: black;
+    opacity: 0.8;
+    border-radius: 10px;
+}
+
+.refresh-background {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    opacity: 0.9;
+    background-image: url(../../assets/icons/cloud.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: 0.5s;
+}
+.refresh-background:hover {
+    cursor: pointer;
+    background-color: #3D3D3E;
+    opacity: 0.7;
+    transition: 0.5s;
+}
+.refresh-background:active {
+    opacity: 1;
+    transition: 0.1s;
+}
+.refresh-button {
+    margin-left: 13.2px;
+    margin-top: 15px;
+    width: 32px;
+    height: 32px;
+    background-image: url(../../assets/icons/refresh.png);
+    background-size: 12px 12px;
+    background-repeat: no-repeat;
+}
+/* Язык */
+.change-language {
+    width: 100px;
+    height: 40px;
+    /* border: 1px solid #3D3D3E; */
+    border-radius: 5px;
+    opacity: 0.9;
+    background-image: url(../../assets/icons/global.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #8BCCD2;
+    transition: 0.5s;
+}
+.change-language:hover {
+    cursor: pointer;
+    background-color: #3D3D3E;
+    opacity: 1;
+    transition: 0.5s;
+}   
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.topmenu {
+    text-align: center;
+}
+.topmenu > li {
+    font-size: 0;
+    cursor: pointer;
+    line-height: 50px;
+    width: 100%;
+    position: relative;
+    font-family: 'Open Sans', sans-serif;
+}
+.submenu {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    z-index: 5;
+    width: 100px;
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: 0 0;
+    transition: .5s ease-in-out;
+  }
+.submenu li {
+    color: white;
+    text-align: left;
+    padding: 0px 0px;
+    font-size: 14px;
+    transition: 0.3s;
+  }
+.submenu li:hover {
+    opacity: 0.8;
+    font-size: 17px;
+    transition: 0.3s;
+}
+
+.topmenu > li:hover .submenu {
+    opacity: 1;
+    transform: scaleY(1);
+}
+
+/* Температура */
+.change-temperature {
+    display: flex;
+    flex-direction: row;
+    width: 180px;
+    height: 40px;
+    opacity: 0.9;
+    padding-top: 2px;
+    border-radius: 10px;
+}
+
+.celcium {
+    width: 40px;
+    padding-right: 10px;
+    background-image: url(../../assets/icons/celcium.png);
+    background-size: 24px 24px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.celcium:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+.faren {
+    margin-left: 20px;
+    width: 40px;
+    padding-left: 10px;
+    background-image: url(../../assets/icons/fahren.png);
+    background-size: 24px 24px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.faren:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+.active {
+    transition: .2s;
+    border-radius: 10px;
+    background-color: #ccc;
+    opacity: 0.4;
+}
+
+/* Поиск */
+.form {
+    float: right;
+    position: relative;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.d1 input {
+    width: 100%;
+    height: 42px;
+    padding-left: 10px;
+    border: 1px solid #3D3D3E;
+    border-radius: 5px;
+    outline: none;
+    color: #9E9C9C;
+}
+
+.d1 button {
+    position: absolute; 
+    top: 1px;
+    right: 1px;
+    width: 82px;
+    height: 40px;
+    border: none;
+    background: #ffffff;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+.header-text {
+    margin-left: 50px;
+    line-height: 37px;
+    color: white;
+}
+@media (min-width: 768px) and (max-width: 1001px){
+    .header{
+        grid-template-columns: 4% 7% 5% 20% 62% 2%;
+    }
+}
+@media (min-width: 320px) and (max-width: 425px) {
+    .header{
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        height: 250px;
+        display: flex;
+        flex-direction: column;
+    }
+    .d1 input {
+        width: 100%;
+        height: 42px;
+        padding-left: 10px;
+        border: 1px solid #3D3D3E;
+        border-radius: 5px;
+        outline: none;
+        color: #9E9C9C;
+    }
+    .form {
+        float: right;
+        position: relative;
+        width: 100%;
+        margin: 0 auto;
+    }
+}
