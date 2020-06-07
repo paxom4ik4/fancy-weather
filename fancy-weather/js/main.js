@@ -1,4 +1,11 @@
-// Смена фона по клику
+window.onload = function () {
+  document.body.classList.add('loaded_hiding');
+  window.setTimeout(function () {
+    document.body.classList.add('loaded');
+    document.body.classList.remove('loaded_hiding');
+  }, 500);
+}
+  
 localStorage.setItem('background', 1);
 
 const changeBackButton = document.querySelector(".refresh-background");
@@ -118,5 +125,4 @@ function searchWeather(e) {
     headerInput.innerText = "";
     getWeather(inputValue);
   }
-  
 }
