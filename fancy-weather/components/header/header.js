@@ -229,18 +229,19 @@ function enText(){
             feelDiv.innerText = ' feels like';
             windDiv.innerText = ' wind';
             humidityDiv.innerText = ' humidity';
-
-        
+            
         lat.innerText = " lat";
         lon.innerText = " lon";
-        
+
         mapTxt.innerHTML = `
-        Click on cards to hear the Forecast! Or click on microphone and say: "Forecast" <br>
-        You can also find out information about your city by saying its name. <br>
-        Turn on Microphone and say "Louder" or "Hush" to control the volume. <br>
-        To speak another language: Deactivate microphone if it works. Change language. Turn on it again.
-        `
+            Click on cards to hear the Forecast! Or click on microphone and say: "Forecast" <br>
+            You can also find out information about your city by saying its name. <br>
+            Turn on Microphone and say "Louder" or "Hush" to control the volume. <br>
+            To speak another language: Deactivate microphone if it works. Change language. Turn on it again.
+            `;
+        
     }
+    
     render(); 
 
     localStorage.setItem("language", 'en-EN');
@@ -301,93 +302,188 @@ function rusText(){
 }
 
 const btnRecognize = document.querySelector(".microphone");
+enRec();
 
-
-function isMobile() {
-    return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-  }
-
-const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition || window.mozSpeechRecognition || window.msSpeechRecognition;
-
-
-class Recognizer {
-    constructor() {
-      this.recognition = new SpeechRecognition();
-      this.recognition.lang = localStorage.getItem("language");
-      if (!isMobile()) {
-        this.recognition.continuous = true;
-        this.recognition.interimResults = true;
-      }
-      this.isRecognizing = false;
-      this.transcript = "";
-}
-
-start(handler) {
-    btnRecognize.classList.remove("microphone");
-    btnRecognize.classList.add("microphone-active");
-    this.transcript = "";
-    this.recognition.onresult = (event) => {
-      this.onResult(event, handler);
-    };
-    this.recognition.start();
-    this.isRecognizing = true;
-  }
-  
-  stop() {
-    btnRecognize.classList.add("microphone");
-    btnRecognize.classList.remove("microphone-active");
-    this.recognition.abort();
-    this.isRecognizing = false;
-  }
-  
-  onResult(event, handler) {
-    let interim_transcript = "";
-    for (let i = event.resultIndex; i < event.results.length; ++i) {
-        let result = event.results[i];
-      if (result.isFinal) {
-          console.log(result[0].transcript);
-        this.transcript += result[0].transcript;
-        if(result[0].transcript.replace(/\s+/g, '') == "forecast" || result[0].transcript.replace(/\s+/g, '') == "прогноз"){
-            speakWeather();
-        }
-        else if (result[0].transcript.replace(/\s+/g, '') == "louder" || result[0].transcript.replace(/\s+/g, '') == "громче"){
-            louder();
-        }
-        else if (result[0].transcript.replace(/\s+/g, '') == "hush" || result[0].transcript.replace(/\s+/g, '') == "тише"){
-            hush();
-        }
-        else{
-            getWeather(result[0].transcript);
-        }
-      } else {
-        interim_transcript += result[0].transcript;
-      }
+function rusRec(){
+    function isMobile() {
+        return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
     }
-  }
-}
 
-const recognizer = new Recognizer();
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition || window.mozSpeechRecognition || window.msSpeechRecognition;
 
-function start() {
-    recognizer.start();
-}
-  
-function stop() {
-    recognizer.stop();
-}
-  
-function createMicro(){
+    class Recognizer {
+        constructor() {
+        this.recognition = new SpeechRecognition();
+        this.recognition.lang = localStorage.getItem("language");
+        if (!isMobile()) {
+            this.recognition.continuous = true;
+            this.recognition.interimResults = true;
+        }
+        this.isRecognizing = false;
+        this.transcript = "";
+    }
+
+
+
+    start(handler) {
+        btnRecognize.classList.remove("microphone");
+        btnRecognize.classList.add("microphone-active");
+        this.transcript = "";
+        this.recognition.onresult = (event) => {
+        this.onResult(event, handler);
+        };
+        this.recognition.start();
+        this.isRecognizing = true;
+    }
     
-}
-btnRecognize.addEventListener("click", () => {
-    if (!recognizer.isRecognizing) {
-        start();
-    } else {
-        stop();
+    stop() {
+        btnRecognize.classList.add("microphone");
+        btnRecognize.classList.remove("microphone-active");
+        this.recognition.abort();
+        this.isRecognizing = false;
     }
-});
+    
+    onResult(event, handler) {
+        let interim_transcript = "";
+        for (let i = event.resultIndex; i < event.results.length; ++i) {
+            let result = event.results[i];
+        if (result.isFinal) {
+            console.log(result[0].transcript);
+            this.transcript += result[0].transcript;
+            if(result[0].transcript.replace(/\s+/g, '') == "forecast" || result[0].transcript.replace(/\s+/g, '') == "прогноз"){
+                speakWeather();
+            }
+            else if (result[0].transcript.replace(/\s+/g, '') == "louder" || result[0].transcript.replace(/\s+/g, '') == "громче"){
+                louder();
+            }
+            else if (result[0].transcript.replace(/\s+/g, '') == "hush" || result[0].transcript.replace(/\s+/g, '') == "тише"){
+                hush();
+            }
+            else{
+                getWeather(result[0].transcript);
+            }
+        } else {
+            interim_transcript += result[0].transcript;
+        }
+        }
+    }
+    }
+
+    const recognizer = new Recognizer(localStorage.getItem("language"));;
 
 
+    function start() {
+        recognizer.start();
+    }
+    
+    function stop() {
+        recognizer.stop();
+    }
+    
+    function createMicro(){
+        
+    }
+    btnRecognize.addEventListener("click", () => {
+        if (!recognizer.isRecognizing) {
+            start();
+        } else {
+            stop();
+        }
+    });
+
+}
+
+function enRec(){
+    function isMobile() {
+        return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    }
+
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition || window.mozSpeechRecognition || window.msSpeechRecognition;
+
+    class Recognizer {
+        constructor() {
+        this.recognition = new SpeechRecognition();
+        this.recognition.lang = localStorage.getItem("language");
+        if (!isMobile()) {
+            this.recognition.continuous = true;
+            this.recognition.interimResults = true;
+        }
+        this.isRecognizing = false;
+        this.transcript = "";
+    }
+
+
+
+    start(handler) {
+        btnRecognize.classList.remove("microphone");
+        btnRecognize.classList.add("microphone-active");
+        this.transcript = "";
+        this.recognition.onresult = (event) => {
+        this.onResult(event, handler);
+        };
+        this.recognition.start();
+        this.isRecognizing = true;
+    }
+    
+    stop() {
+        btnRecognize.classList.add("microphone");
+        btnRecognize.classList.remove("microphone-active");
+        this.recognition.abort();
+        this.isRecognizing = false;
+    }
+    
+    onResult(event, handler) {
+        let interim_transcript = "";
+        for (let i = event.resultIndex; i < event.results.length; ++i) {
+            let result = event.results[i];
+        if (result.isFinal) {
+            console.log(result[0].transcript);
+            this.transcript += result[0].transcript;
+            if(result[0].transcript.replace(/\s+/g, '') == "forecast" || result[0].transcript.replace(/\s+/g, '') == "прогноз"){
+                speakWeather();
+            }
+            else if (result[0].transcript.replace(/\s+/g, '') == "louder" || result[0].transcript.replace(/\s+/g, '') == "громче"){
+                louder();
+            }
+            else if (result[0].transcript.replace(/\s+/g, '') == "hush" || result[0].transcript.replace(/\s+/g, '') == "тише"){
+                hush();
+            }
+            else{
+                getWeather(result[0].transcript);
+            }
+        } else {
+            interim_transcript += result[0].transcript;
+        }
+        }
+    }
+    }
+
+    const recognizer = new Recognizer(localStorage.getItem("language"));;
+
+
+    function start() {
+        recognizer.start();
+    }
+    
+    function stop() {
+        recognizer.stop();
+    }
+    
+    function createMicro(){
+        
+    }
+    btnRecognize.addEventListener("click", () => {
+        if (!recognizer.isRecognizing) {
+            start();
+        } else {
+            stop();
+        }
+    });
+}
+
+ruButton.addEventListener('click', rusRec);
+enButton.addEventListener('click', enRec);
+beButton.addEventListener('click', rusRec);
 
 localStorage.setItem("volume", 0.5);
 
