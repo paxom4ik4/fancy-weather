@@ -29,7 +29,6 @@ headerContent += `
             </form>
         </div>
     </div>    
-    
     <div class="microphone"></div>
 `
 

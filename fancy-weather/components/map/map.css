@@ -88,13 +88,28 @@
     .map-container {
         position: relative;
         width: 90%;
-        height: 630px;
+        height: 530px;
         left: 1%;
     }
     .weather-map {
         width: 80%;
         height: 140px;
-        top: 470px;
+        top: 370px;
         left: 15%;
     }
+    .lon {
+        margin-left: 40px;
+        font-size: 29px;
+        color: white;
+        z-index: 10;
+        align-items: baseline;
+    }
+    .lat {
+        margin-left: 40px;
+        font-size: 29px;
+        color: white;
+        z-index: 10;
+        align-items: baseline;
+    }
 }
+

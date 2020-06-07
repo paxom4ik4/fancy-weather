@@ -84,18 +84,23 @@ ul {
     transform: scaleY(0);
     transform-origin: 0 0;
     transition: .5s ease-in-out;
+    background-color: black;
+    border-radius: 10px;
   }
 .submenu li {
     color: white;
     text-align: left;
     padding: 0px 0px;
     font-size: 14px;
+    font-weight: 900;
     transition: 0.3s;
+    z-index: 100;
   }
 .submenu li:hover {
     opacity: 0.8;
     font-size: 17px;
     transition: 0.3s;
+    z-index: 100;
 }
 
 .topmenu > li:hover .submenu {
@@ -187,15 +192,17 @@ ul {
 }
 @media (min-width: 320px) and (max-width: 425px) {
     .header{
-        align-items: center;
-        justify-content: center;
-        margin: 0 auto;
-        height: 250px;
-        display: flex;
-        flex-direction: column;
+        grid-template-columns: 20% 30% 50%;
     }
-    .d1 input {
+    .form {
+        position: relative;
+        left: 0px;
         width: 100%;
+        margin: 0 auto;
+    }
+    
+    .d1 input {
+        width: 200px;
         height: 42px;
         padding-left: 10px;
         border: 1px solid #3D3D3E;
@@ -203,10 +210,17 @@ ul {
         outline: none;
         color: #9E9C9C;
     }
-    .form {
-        float: right;
-        position: relative;
-        width: 100%;
-        margin: 0 auto;
+    
+    .d1 button {
+        position: absolute; 
+        top: 1px;
+        right: 1px;
+        width: 82px;
+        height: 40px;
+        border: none;
+        background: #ffffff;
+        border-radius: 0 5px 5px 0;
+        cursor: pointer;
     }
+    
 }
